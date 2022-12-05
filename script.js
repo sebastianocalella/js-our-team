@@ -31,3 +31,10 @@ const members = [
     }
     
 ];
+
+for(let i=0; i<members.length; i++){
+    const actualMembers = members[i];
+    for(let key in actualMembers){
+        console.log(key + ": " + actualMembers[key]);
+    }
+}
