@@ -41,6 +41,7 @@ const members = [
 for(let i=0; i<members.length; i++){
     const actualMembers = members[i];
     let divCard = createDivElement();
+    divCard.classList.add('card','col-3','mx-1','my-5');
     for(let key in actualMembers){
         console.log(key + ": " + actualMembers[key]);
         let divImage = createDivElement();
