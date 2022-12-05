@@ -43,13 +43,23 @@ for(let i=0; i<members.length; i++){
     for(let key in actualMembers){
         console.log(key + ": " + actualMembers[key]);
         let divCard = createDivElement();
+        let divImage = createDivElement();
+        let nameContent = createName();
+        let roleContent = createRole();
         if(key==='image'){
-            divCard.innerHTML = `<img src="./img/${actualMembers.image}" alt="${actualMembers.name} image">`
-            mainDom.append(divCard);
-        } else {
-            divCard.innerText = actualMembers[key];
-            mainDom.append(divCard);
+            divImage.classList.add('image');
+            divImage.innerHTML = `<img src="./img/${actualMembers.image}" alt="${actualMembers.name} image">`
+            divCard.append(divImage);
+        } else if(key==='name'){
+            nameContent.classList.add('text');
+            nameContent.innerText = actualMembers.name;
+            divCard.append(nameContent);
+        }else {
+            roleContent.classList.add('text');
+            roleContent.innerText = actualMembers.role;
+            divCard.append(roleContent);
         }
+        mainDom.append(divCard);
     }
 }
 
@@ -57,4 +67,14 @@ for(let i=0; i<members.length; i++){
 function createDivElement(){
     const divElement = document.createElement('div');
     return divElement
+}
+
+function createName(){
+    const nameElement = document.createElement('h2');
+    return nameElement;
+}
+
+function createRole(){
+    const roleElement = document.createElement('p');
+    return roleElement;
 }
