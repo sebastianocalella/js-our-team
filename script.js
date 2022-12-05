@@ -40,9 +40,9 @@ const members = [
 
 for(let i=0; i<members.length; i++){
     const actualMembers = members[i];
+    let divCard = createDivElement();
     for(let key in actualMembers){
         console.log(key + ": " + actualMembers[key]);
-        let divCard = createDivElement();
         let divImage = createDivElement();
         let nameContent = createName();
         let roleContent = createRole();
@@ -59,8 +59,8 @@ for(let i=0; i<members.length; i++){
             roleContent.innerText = actualMembers.role;
             divCard.append(roleContent);
         }
-        mainDom.append(divCard);
     }
+    mainDom.append(divCard);
 }
 
 
