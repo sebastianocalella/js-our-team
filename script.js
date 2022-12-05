@@ -43,8 +43,12 @@ for(let i=0; i<members.length; i++){
     for(let key in actualMembers){
         console.log(key + ": " + actualMembers[key]);
         let divCard = createDivElement();
-        divCard.innerText = actualMembers[key];
-        mainDom.append(divCard);
+        if(key==='image'){
+            divCard.innerText = `<img src="${actualMembers.image}" alt="${actualMembers.name} image">`
+        } else {
+            divCard.innerText = actualMembers[key];
+            mainDom.append(divCard);
+        }
     }
 }
 
