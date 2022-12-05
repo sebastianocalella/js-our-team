@@ -1,3 +1,7 @@
+
+// DOM references
+const mainDom = document.getElementById('main');
+
 const members = [
     {
         name:"Wayne Barnett",
@@ -32,9 +36,20 @@ const members = [
     
 ];
 
+//print array data in console
+
 for(let i=0; i<members.length; i++){
     const actualMembers = members[i];
     for(let key in actualMembers){
         console.log(key + ": " + actualMembers[key]);
+        let divCard = createDivElement();
+        divCard.innerText = actualMembers[key];
+        mainDom.append(divCard);
     }
+}
+
+
+function createDivElement(){
+    const divElement = document.createElement('div');
+    return divElement
 }
